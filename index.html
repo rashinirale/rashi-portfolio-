@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio '25 -Rashi Nirale</title>
+  <style>
+    /* General Reset and Base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 20px;
+      color: #000;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Wrapper */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* --- HEADER/LOGO --- */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .header .portfolio-title {
+      font-weight: 900;
+      font-size: 125px;
+      letter-spacing: -5px;
+      line-height: 1;
+      user-select: none;
+      color: black;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .header .portfolio-title span {
+      display: inline-block;
+      font-style: normal;
+      font-size: 150px;
+      line-height: 1;
+    }
+
+    /* Applying rotation and styling to letters for exact look */
+    .header .portfolio-title span.p {
+      transform: rotate(-8deg);
+    }
+    .header .portfolio-title span.o {
+      transform: rotate(30deg);
+    }
+
+    .header .portfolio-title span.r {
+      transform: rotate(20deg);
+    }
+
+    .header .portfolio-title span.t {
+
+      margin: 0 6px;
+    }
+
+    .header .portfolio-title span.f {
+      transform: rotate(-12deg);
+    }
+
+    .header .portfolio-title span.l {
+      transform: rotate(-28deg);
+    }
+
+    .header .portfolio-title span.o {
+      font-weight: 900;
+    }
+
+    .header .year {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ccbcae;
+      position: absolute;
+      top: 34px;
+      right: 30%;
+      user-select: none;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .header .name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #ccbcae;
+      user-select: none;
+      margin-top: 7px;
+    }
+
+    /* Illustration image container */
+    .header .illustration {
+      width: 200px;
+      height: auto;
+      margin: 0 auto;
+      margin-top: -20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* --- INTRO --- */
+    .intro {
+      max-width: 740px;
+      margin: 0 auto 40px auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+    }
+
+    /* Polaroid photo style */
+    .intro .photo {
+      position: relative;
+      width: 160px;
+      aspect-ratio: 3 / 4;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 2px 8px 20px rgba(0,0,0,0.13);
+      overflow: hidden;
+      flex-shrink: 0;
+      transform: rotate(-7deg);
+    }
+
+    .intro .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .intro .photo::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      width: 120px;
+      height: 6px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 6px;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Intro text */
+    .intro .text {
+      flex-grow: 1;
+    }
+
+    .intro .text h2 {
+      font-weight: 700;
+      color: #4f4037;
+      margin: 0 0 12px 0;
+      font-size: 22px;
+    }
+
+    .intro .text p {
+      font-weight: 400;
+      font-size: 14px;
+      color: #1a1a1a;
+      max-width: 520px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Highlighted name */
+    .intro .text h2 span,
+    .intro .text p span {
+      color: #ccbcae;
+      font-weight: 700;
+    }
+
+    /* --- EXPERIENCE & CONTACT --- */
+    .info-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 70px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 40px;
+    }
+
+    .info-column {
+      flex: 1;
+    }
+
+    /* Experience */
+    .info-column h3 {
+      font-weight: 700;
+      font-size: 14px;
+      color: #000;
+      margin-bottom: 18px;
+    }
+
+    .experience-list {
+      font-size: 12px;
+      color: #34403b;
+      max-width: 300px;
+      line-height: 1.3;
+      user-select: text;
+    }
+
+    .experience-list strong {
+      font-weight: 700;
+      color: #4f4037;
+    }
+
+    .experience-list em {
+      font-style: normal;
+      font-size: 10px;
+      color: #a8a8a8;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    /* Vertical line between experiences */
+    .info-column.experience + .info-column.experience {
+      border-left: 1px solid #ccc;
+      padding-left: 32px;
+    }
+
+    /* Contact details */
+    .contact {
+      max-width: 260px;
+      font-size: 12px;
+    }
+
+    .contact h3 {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .contact-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      line-height: 1.2;
+      color: #1a1a1a;
+      user-select: text;
+    }
+
+    .contact-item svg,
+    .contact-item img {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* SOFTWARES */
+    .softwares {
+      margin-top: 18px;
+    }
+
+    .softwares h3 {
+      font-weight: 700;
+      font-size: 14px;
+      margin: 10px 0 6px 0;
+    }
+
+    .softwares-icons img {
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+      vertical-align: middle;
+      border-radius: 4px;
+    }
+
+    /* --- CONTENT SECTION --- */
+    .content-section {
+      max-width: 960px;
+      margin: 80px auto 0 auto;
+      position: relative;
+      padding-top: 70px;
+    }
+
+    /* Large faded 'CONTENT' text behind */
+    .content-section .content-bg-text {
+      font-weight: 900;
+      font-size: 100px;
+      color: #c9c4c4;
+      letter-spacing: 24px;
+      text-transform: uppercase;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      user-select: none;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Numbered layout above content bg text, small */
+    .content-numbers {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 36px;
+      font-weight: 700;
+      font-size: 20px;
+      color: #ccbcae;
+      z-index: 2;
+      user-select: none;
+    }
+
+    .content-numbers span {
+      display: block;
+      width: 30px;
+      text-align: center;
+    }
+
+    /* --- Portfolio Items --- */
+    .portfolio-items {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 110px;
+      gap: 16px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .portfolio-item {
+      flex: 1;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      user-select: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+
+    /* Background colors same as image blocks */
+    .item-1 {
+      background: #4c6ace; /* Blue */
+      padding: 24px 12px 28px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 1;
+      position: relative;
+      color: white;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .item-2 {
+      background: #d8d1c4; /* Beige */
+      padding: 24px 12px 28px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 1;
+      color: black;
+      flex-grow: 1;
+      justify-content: center;
+      position: relative;
+    }
+
+    .item-3 {
+      background: #aec37a; /* Green */
+      padding: 24px 12px 28px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 1;
+      flex-grow: 1;
+      justify-content: center;
+      color: black;
+      position: relative;
+    }
+
+    .item-4 {
+      background: #e35f5e; /* Red */
+      padding: 24px 12px 28px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 1;
+      color: white;
+      flex-grow: 1;
+      justify-content: center;
+      position: relative;
+    }
+
+    .item-5 {
+      background: #758fca; /* Light Blue */
+      padding: 24px 12px 28px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 1;
+      position: relative;
+      color: white;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    /* Number in block bottom */
+    .portfolio-item .number {
+      font-size: 96px;
+      font-weight: 900;
+      opacity: 0.9;
+      line-height: 1;
+      margin-top: auto;
+      color: inherit;
+      user-select: none;
+    }
+
+    /* Description text below number blocks */
+    .portfolio-item .desc {
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+      user-select: text;
+      color: inherit;
+    }
+
+    /* App images inside items */
+    .portfolio-item .app-images {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      max-width: 120px;
+      user-select: none;
+    }
+
+    /* Specific sizes for app screenshots or illustrations */
+    .portfolio-item .app-images img,
+    .portfolio-item .app-images svg {
+      max-width: 48px;
+      max-height: 90px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      object-fit: contain;
+    }
+
+    /* Color overrides for text black on beige/green background */
+    .item-2 .desc,
+    .item-3 .desc {
+      color: #000;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .info-section {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .portfolio-items {
+        flex-direction: column;
+      }
+
+      .portfolio-item {
+        max-width: 100%;
+        margin-bottom: 24px;
+      }
+
+      .content-numbers {
+        font-size: 16px;
+        gap: 20px;
+      }
+
+      .content-section .content-bg-text {
+        font-size: 60px;
+        letter-spacing: 12px;
+      }
+
+      .intro {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .intro .text {
+        max-width: 100%;
+      }
+      
+    }
+    .project-link {
+  font-size: 0.8rem;       /* small text */
+  color: #161a24;          /* nice link color */
+  text-decoration: underline; /* underline to indicate clickable */
+}
+
+.project-link:hover {
+  color: #021633;          /* hover color change */
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="portfolio-title" aria-label="Portfolio">
+        <span class="p">P</span>
+        <span class="O">O</span>
+        <span class="r">R</span>
+        <span class="t">T</span>
+        <span class="f">f</span>
+        <span class="o">O</span>
+        <span class="l">L</span>
+        <span class="i">I</span>
+        <span class="o">O</span>
+      </div>
+      <div class="year">'25</div>
+      <div class="name" aria-label="Author Name">SHOURYA KHANNA</div>
+      <!-- Illustration centered below title -->
+      <img 
+        class="illustration"
+        src="image.jpg" 
+        alt="Illustrated woman portrait"
+        aria-hidden="true"
+      />
+    </header>
+
+    <!-- INTRO -->
+    <section class="intro" aria-labelledby="intro-heading">
+      <div class="photo" aria-label="Photo of Rashi">
+        <img src="second image.jpg" alt="Photograph of Rashi nirale" />
+      </div>
+      <div class="text">
+        <h2 id="intro-heading">HI, I'm <span>Rashi</span></h2>
+        <p>
+     I’m a Front-End Web Developer passionate about building clean, responsive, and user-friendly websites. I love turning ideas into interactive designs using modern web technologies. For me, development is not just about writing code—it’s about creating experiences that look great, work smoothly, and feel effortless for users.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & CONTACT -->
+    <section class="info-section" aria-label="Experience and Contact Information">
+      <!-- Experience Left -->
+      <div class="info-column experience" aria-label="Experience 1">
+        <h3>EXPERIENCE</h3>
+        <div class="experience-list">
+          <strong>Technovation (Project EXPO) – Participation</strong>
+          <em>2025</em>
+
+          <strong>FRONTEND DEVELOPMENT INTERNSHIP</strong>
+          <em>2025 -Present</em>
+
+          <strong>Campaign manager 360 certification exam-Google Digital Academy (Skillshop)</strong>
+          <em>august 2025 - august 2026</em>
+
+          <strong>Amazon Aurora MySQL – Basics by AWS</strong>
+          <em>august 2025</em>
+
+          <strong>Freelance Web developer</strong>
+          <em>2025 - PRESENT</em>
+
+          <strong>Two-Month Internship on HTML, CSS, JavaScript-IANT</strong>
+          <em>JULY 2024 - september 2024</em>
+        </div>
+      </div>
+
+      <!-- Experience Right -->
+      <div class="info-column experience" aria-label="Experience 2">
+        <h3>EXPERIENCE</h3>
+        <div class="experience-list">
+          <strong>Introduction to Career Skills in Software Development -CompTIA,LinkedIn Learning Community,Project Management Institute,NASBA,HRCI Organizational Certification,SHRM</strong>
+          <em>august 2025</em>
+
+          <strong>Eureka Tech-Expo (Automated Bonafide Certificate Generator) – Participation(Government Polytechnic, Yavatmal)</strong>
+          <em>April -2025</em>
+
+          <strong>Graphic Design Careers: First Steps byLinkedIn Learning Community</strong>
+          <em>july 2025</em>
+
+           <strong>Getting Started with DevOps on AWS</strong>
+          <em>july 2025</em>
+                   
+          <strong>Working with LinkedIn Learning Exercise Files on GitHub by LinkedIn Learning Community</strong>
+          <em>august 2025</em>
+          
+
+        
+
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <aside class="contact" aria-label="Contact & Software Skills">
+        <h3>CONTACT</h3>
+
+       
+        <div class="contact-item">
+          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn Icon" />
+          <a href="https://www.linkedin.com/in/rashi-nirale-b58078302" target="_blank" rel="noopener noreferrer">linkedin.com/in/Rashi-nirale-49648b26a/</a>
+        </div>
+
+        <div class="contact-item">
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="Email Icon" />
+          <a href="mailto:niralerashi56@gmail.com">niralerashi56@gmail.com</a>
+        </div>
+          
+       <div class="softwares">
+  <h3>SOFTWARES</h3>
+  <div class="softwares-icons" aria-label="Software icons">
+    <img src="https://img.icons8.com/fluency/48/000000/visual-studio-code-2019.png" alt="VS Code" />
+    <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub" />
+    <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" />
+    <img src="https://img.icons8.com/fluency/48/000000/figma.png" alt="Figma" />
+    <img src="https://img.icons8.com/fluency/48/000000/chrome.png" alt="Chrome DevTools" />
+  </div>
+</div>
+<br>
+<div class="contact-item">
+          <strong>CERTIFICATIONS</strong>
+          <br>
+            <em>Available on LinkedIn.</em>
+          
+        </div>
+
+      </aside>
+    </section>
+
+    <!-- CONTENT SECTION -->
+    <section class="content-section" aria-label="Portfolio content items">
+      <!-- Large background text -->
+      <div class="content-bg-text" aria-hidden="true">CONTENT</div>
+
+      <!-- Numbers 01 to 05 -->
+      <div class="content-numbers" aria-hidden="true">
+        <span>01</span>
+        <span>02</span>
+        <span>03</span>
+        <span>04</span>
+        <span>05</span>
+      </div>
+
+      <!-- Portfolio items -->
+      <div class="portfolio-items">
+        <!-- 1 -->
+        <div class="portfolio-item item-1" aria-label="Travlo app accessible travel for people with special needs">
+          <div class="app-images" aria-hidden="true">
+            <img src="img 1.jpg" alt="Mobile app Screenshot 1" />
+            <img src="img 3.jpg" alt="Mobile app Screenshot 2" />
+          </div>
+          <span class="number" aria-hidden="true">1</span>
+          <p class="desc">
+            BONAFIDE GENERATOR -<br />
+            Web-based tool to generate Bonafide Certificates automatically.
+          </p>
+          <a href="" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <!-- 2 -->
+        <div class="portfolio-item item-2" aria-label="Sanora website design for a premium safety wear brand">
+          <div class="app-images" aria-hidden="true">
+            <img src="img 2.jpg" alt="Website design Screenshot" />
+          </div>
+          <span class="number" aria-hidden="true">2</span>
+          <p class="desc">
+            POCKAMON LAB -<br />
+            Web-based platform to explore Pokémon stats, powers, and details interactively.
+          </p>
+          <a href="https://rashinirale.github.io/CPC-pomodoro-Timer/" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <!-- 3 -->
+        <div class="portfolio-item item-3" aria-label="Factory flow management system">
+          <div class="app-images" aria-hidden="true">
+            <img src="img 5.jpg" alt="Factory Flow System Screenshot" />
+          </div>
+          <span class="number" aria-hidden="true">3</span>
+          <p class="desc">
+            IPHONE 12 VS GALAXY S21 -<br />
+           CSS-only Glassmorphism website comparing iPhone 12 and Galaxy S21 designs.
+          </p>
+          <a href="https://rashinirale.github.io/iphone-12-vs-galaxy-s21-glassmorphism-cssonly/" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <!-- 4 -->
+        <div class="portfolio-item item-4" aria-label="Agoda website redesign">
+          <div class="app-images" aria-hidden="true">
+            <img src="img 4.jpg" alt="Agoda website redesign screenshot" />
+          </div>
+          <span class="number" aria-hidden="true">4</span>
+          <p class="desc">
+           CPC POMODORO TIMER -<br />
+            Interactive website to track work and break sessions with Pomodoro technique.
+          </p>
+          <a href="https://rashinirale.github.io/CPC-pomodoro-Timer/" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <!-- 5 -->
+        <div class="portfolio-item item-5" aria-label="Balancify app for work-life balance">
+          <div class="app-images" aria-hidden="true">
+            <img src="img 6.jpg" alt="Balancify app screen 1" />
+            <img src="img 7.jpg" alt="Balancify app screen 2" />
+          </div>
+          <span class="number" aria-hidden="true">5</span>
+          <p class="desc">
+            FREQUENCY MODULATION- <br />
+            Interactive website to simulate and understand frequency modulation visually.
+          </p>
+          <a href="https://rashinirale.github.io/frequency-modulationn/" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
